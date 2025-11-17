@@ -14,6 +14,13 @@ import httpx
 # Exercise 1.1: Fetch and display all posts (first 5)
 url = "https://jsonplaceholder.typicode.com/posts"
 # TODO: Send GET request and display first 5 posts
+response = httpx.get(url)
+posts = response.json()
+
+print("First 5 posts: ")
+for post in posts [:5]:
+    print(post)
+print()
 
 
 # Exercise 1.2: Fetch a single post by ID
