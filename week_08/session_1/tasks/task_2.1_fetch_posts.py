@@ -25,9 +25,21 @@ print()
 
 # Exercise 1.2: Fetch a single post by ID
 url = "https://jsonplaceholder.typicode.com/posts/1"
+response = httpx.get(url)
+single_post = response.json()
+
+print("Single Post, with ID 1: ")
+print(sinle_post)
+print()
 # TODO: Send GET request and display the post details
 
 
 # Exercise 1.3: Fetch users and display their names
 url = "https://jsonplaceholder.typicode.com/users"
+response = httpx.get(url)
+users = response.json()
+
+print("Users names: ")
+for user in users:
+    print(user["name"])
 # TODO: Send GET request and display user names
